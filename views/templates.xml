@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_delivery_document_brand" inherit_id="stock.report_delivery_document">
+        <!-- For the report without serial numbers -->
+        <xpath expr="//table[@name='stock_move_table']/thead/tr/th[@name='th_sm_product']" position="after">
+            <th name="th_sm_brand"><strong>Brand</strong></th>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_table']/tbody/tr/td[1]" position="after">
+            <td>
+                <span t-field="move.brand_id.name"/>
+            </td>
+        </xpath>
+
+        <!-- For the report with serial numbers -->
+        <xpath expr="//table[@name='stock_move_line_table']/thead/tr/th[@name='th_sml_product']" position="after">
+            <th name="th_sml_brand"><strong>Brand</strong></th>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_line_table']/tbody/tr/td[1]" position="after">
+            <td>
+                <span t-field="move_line.product_id.brand_id.name"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>
