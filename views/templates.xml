@@ -17,7 +17,8 @@
         </xpath>
         <xpath expr="//table[@name='stock_move_line_table']/tbody/tr/td[1]" position="after">
             <td>
-                <span t-field="move_line.product_id.brand_id.name"/>
+                <span t-field="move_line.product_id.product_brand_id.name"/>
+                
             </td>
         </xpath>
     </template>

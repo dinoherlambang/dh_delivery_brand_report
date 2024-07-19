@@ -22,6 +22,8 @@
     # any module necessary for this one to work correctly
     'depends': ['base','product','stock','product_brand'],
 
+    'sequence': 1,
+
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
